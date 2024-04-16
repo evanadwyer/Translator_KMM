@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.kotlinCocoapods)
     alias(libs.plugins.androidLibrary)
+    kotlin("plugin.serialization") version libs.versions.kotlin
+    id("com.squareup.sqldelight")
 }
 
 kotlin {
@@ -29,11 +31,41 @@ kotlin {
     }
     
     sourceSets {
-        commonMain.dependencies {
-            //put your multiplatform dependencies here
+        val commonMain by getting {
+            dependencies {
+                implementation(libs.ktor.core)
+                implementation(libs.ktor.serialization)
+                implementation(libs.ktor.serialization.json)
+                implementation(libs.sql.delight.runtime)
+                implementation(libs.sql.delight.coroutines.extensions)
+                implementation(libs.kotlin.date.time)
+            }
         }
-        commonTest.dependencies {
-            implementation(libs.kotlin.test)
+        val commonTest by getting {
+            dependencies {
+                implementation(libs.kotlin.test)
+                implementation(libs.assertk)
+                implementation(libs.turbine)
+            }
+        }
+        val androidMain by getting {
+            dependencies {
+                implementation(libs.ktor.android)
+                implementation(libs.sql.delight.android.driver)
+            }
+        }
+        val iosX64Main by getting
+        val iosArm64Main by getting
+        val iosSimulatorArm64Main by getting
+        val iosMain by creating {
+            dependsOn(commonMain)
+            iosX64Main.dependsOn(this)
+            iosArm64Main.dependsOn(this)
+            iosSimulatorArm64Main.dependsOn(this)
+            dependencies {
+                implementation(libs.ktor.ios)
+                implementation(libs.sql.delight.native.driver)
+            }
         }
     }
 }
