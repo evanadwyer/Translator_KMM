@@ -1,4 +1,4 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompileCommon
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
@@ -70,6 +70,8 @@ kotlin {
             }
         }
     }
+
+    task("testClasses")
 }
 
 android {
@@ -84,7 +86,7 @@ android {
     }
 }
 
-tasks.withType<KotlinCompileCommon>().configureEach {
+tasks.withType<KotlinCompile>().configureEach {
     kotlinOptions {
         freeCompilerArgs = freeCompilerArgs + "-Xexpect-actual-classes"
     }
@@ -92,8 +94,9 @@ tasks.withType<KotlinCompileCommon>().configureEach {
 
 sqldelight {
     databases {
-        create("Database") {
-            packageName.set("com.evanadwyer")
+        create("TranslateDatabase") {
+            packageName.set("com.evanadwyer.translator_kmm.database")
+//            sourceFolders("sqldelight")
         }
     }
 }

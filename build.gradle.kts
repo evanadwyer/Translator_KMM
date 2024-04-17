@@ -20,3 +20,7 @@ buildscript {
         classpath(libs.hilt.gradle.plugin)
     }
 }
+
+tasks.register("clean", Delete::class) {
+    delete(rootProject.layout.buildDirectory)
+}
