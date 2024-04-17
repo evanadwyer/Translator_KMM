@@ -5,7 +5,7 @@ plugins {
     alias(libs.plugins.kotlinCocoapods)
     alias(libs.plugins.androidLibrary)
     kotlin("plugin.serialization") version libs.versions.kotlin
-    id("com.squareup.sqldelight")
+    id("app.cash.sqldelight")
 }
 
 kotlin {
@@ -87,5 +87,13 @@ android {
 tasks.withType<KotlinCompileCommon>().configureEach {
     kotlinOptions {
         freeCompilerArgs = freeCompilerArgs + "-Xexpect-actual-classes"
+    }
+}
+
+sqldelight {
+    databases {
+        create("Database") {
+            packageName.set("com.evanadwyer")
+        }
     }
 }
