@@ -3,7 +3,7 @@ agp = "8.2.2"
 kotlin = "1.9.20"
 compose = "1.6.5"
 compose-compiler = "1.5.12"
-compose-material3 = "1.2.1"
+#compose-material3 = "1.2.1"
 androidx-activityCompose = "1.8.2"
 compose-navigation = "2.7.7"
 compose-coil = "2.5.0"
@@ -26,7 +26,7 @@ compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview"
 compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
 compose-material = { module = "androidx.compose.material:material", version.ref = "compose" }
 compose-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "compose" }
-compose-material3 = { module = "androidx.compose.material3:material3", version.ref = "compose-material3" }
+#compose-material3 = { module = "androidx.compose.material3:material3", version.ref = "compose-material3" }
 compose-navigation = { module = "androidx.navigation:navigation-compose", version.ref = "compose-navigation" }
 compose-coil = { module = "io.coil-kt:coil-compose", version.ref = "compose-coil" }
 kotlin-date-time = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "date-time" }
