@@ -1,4 +1,4 @@
-package com.evanadwyer.translator_kmm.android.voice_to_text.prsentation.components
+package com.evanadwyer.translator_kmm.android.voice_to_text.presentation.components
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
