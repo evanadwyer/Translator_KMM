@@ -15,6 +15,8 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+
+        testInstrumentationRunner = "com.evanadwyer.translator_kmm.TestHiltRunner"
     }
     buildFeatures {
         compose = true
@@ -67,4 +69,5 @@ dependencies {
 
     kaptAndroidTest(libs.hilt.android.compiler)
     androidTestImplementation(libs.hilt.testing)
+    androidTestImplementation(libs.rules)
 }
