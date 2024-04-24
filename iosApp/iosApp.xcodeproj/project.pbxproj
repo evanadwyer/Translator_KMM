@@ -23,6 +23,8 @@
 		457B240F2BD8197300C208D0 /* TranslateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457B240E2BD8197300C208D0 /* TranslateTextField.swift */; };
 		457B24112BD821DA00C208D0 /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457B24102BD821D900C208D0 /* TextToSpeech.swift */; };
 		457B24132BD8238C00C208D0 /* TranslateHistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457B24122BD8238C00C208D0 /* TranslateHistoryItem.swift */; };
+		457B24172BD94BB000C208D0 /* MicrophonePowerObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457B24162BD94BB000C208D0 /* MicrophonePowerObserver.swift */; };
+		457B24192BD94EEC00C208D0 /* IOSVoiceToTextParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457B24182BD94EEC00C208D0 /* IOSVoiceToTextParser.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 		AA22BB92CC5F62BAC738CD10 /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD30E0DC3DD5D59CCC5C0B3 /* Pods_iosApp.framework */; };
 /* End PBXBuildFile section */
@@ -44,6 +46,8 @@
 		457B240E2BD8197300C208D0 /* TranslateTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateTextField.swift; sourceTree = "<group>"; };
 		457B24102BD821D900C208D0 /* TextToSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
 		457B24122BD8238C00C208D0 /* TranslateHistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateHistoryItem.swift; sourceTree = "<group>"; };
+		457B24162BD94BB000C208D0 /* MicrophonePowerObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrophonePowerObserver.swift; sourceTree = "<group>"; };
+		457B24182BD94EEC00C208D0 /* IOSVoiceToTextParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSVoiceToTextParser.swift; sourceTree = "<group>"; };
 		5BD30E0DC3DD5D59CCC5C0B3 /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -123,6 +127,23 @@
 			path = components;
 			sourceTree = "<group>";
 		};
+		457B24142BD94B8700C208D0 /* voice_to_text */ = {
+			isa = PBXGroup;
+			children = (
+				457B24152BD94B9300C208D0 /* data */,
+			);
+			path = voice_to_text;
+			sourceTree = "<group>";
+		};
+		457B24152BD94B9300C208D0 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				457B24162BD94BB000C208D0 /* MicrophonePowerObserver.swift */,
+				457B24182BD94EEC00C208D0 /* IOSVoiceToTextParser.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
 		6348A8CD0AE4B2DA94244012 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +174,7 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
+				457B24142BD94B8700C208D0 /* voice_to_text */,
 				457B23F92BD6E56600C208D0 /* translate */,
 				457B23F52BD6DEE800C208D0 /* core */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
@@ -287,9 +309,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				457B240D2BD8183600C208D0 /* ProgressButton.swift in Sources */,
+				457B24172BD94BB000C208D0 /* MicrophonePowerObserver.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				457B24092BD8163F00C208D0 /* GradientSurface.swift in Sources */,
 				457B23FD2BD6E59500C208D0 /* LanguageDropDownItem.swift in Sources */,
+				457B24192BD94EEC00C208D0 /* IOSVoiceToTextParser.swift in Sources */,
 				457B240B2BD817B000C208D0 /* LanguageDisplay.swift in Sources */,
 				457B24012BD6ECB700C208D0 /* SmallLanguageIcon.swift in Sources */,
 				457B24052BD6EE9200C208D0 /* IOSTranslateViewModel.swift in Sources */,
